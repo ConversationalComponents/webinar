@@ -19,9 +19,9 @@ app = Flask(__name__)
 
 # Set DialogFlow Auth.
 session_client = dialogflow.SessionsClient.from_service_account_json(
-    "dialogflow_serviceaccount.json")
+    "service_account.json")
 
-with open("dialogflow_serviceaccount.json", "r") as f:
+with open("service_account.json", "r") as f:
     sacc = json.load(f)
 
 project_id = sacc["project_id"]
@@ -112,7 +112,7 @@ def serve(path):
 
 
 if __name__ == "__main__":
-    app.run(port=3000)
+    app.run(port=5000)
 
 
 
